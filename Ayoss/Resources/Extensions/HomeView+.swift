@@ -13,9 +13,12 @@ extension HomeView {
         todos = todoManager.fetchTodos()
     }
 }
+
+
 extension TodoCardView {
+    //TODO: dateString 하나로 모아서 Constants 폴더에 넣기
     func dateString(_ date: Date) -> String {
-        let formatter = DateFormatterConstant()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         return formatter.string(from: date)
     }

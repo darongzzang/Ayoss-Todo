@@ -24,8 +24,8 @@ struct HomeView: View {
     }
     
     //날짜 포맷터
-    var dateFormatter: DateFormatterConstant {
-        let formatter = DateFormatterConstant()
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         return formatter
     }
@@ -131,7 +131,7 @@ struct HomeView: View {
             .padding(.top)
             .background(Color(.systemGray6))
             .sheet(isPresented: $isShowingAddTodo, onDismiss: fetchTodos) {
-                AddTodoView(modelContext: modelContext)
+                AddTodoView()
             }
             .onAppear(perform: fetchTodos)
             .onChange(of: selectedDate) { _ in fetchTodos() }
