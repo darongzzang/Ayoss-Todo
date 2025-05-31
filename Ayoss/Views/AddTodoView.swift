@@ -1,3 +1,5 @@
+
+
 import SwiftUI
 import SwiftData
 
@@ -52,9 +54,9 @@ struct AddTodoView: View {
                                 .background(Color.white)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(!isTodayTask ? Color(hex: "00FFFF") : .gray, lineWidth: 2)
+                                        .stroke(!isTodayTask ? Color.accentColor : .gray, lineWidth: 2)
                                 )
-                                .foregroundColor(!isTodayTask ? Color(hex: "00FFFF") : .gray)
+                                .foregroundColor(!isTodayTask ? Color.accentColor : .gray)
                                 .cornerRadius(8)
                         }
 
@@ -68,9 +70,9 @@ struct AddTodoView: View {
                                 .background(Color.white)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(isTodayTask ? Color(hex: "00FFFF") : .gray, lineWidth: 2)
+                                        .stroke(isTodayTask ? Color.accentColor : .gray, lineWidth: 2)
                                 )
-                                .foregroundColor(isTodayTask ? Color(hex: "00FFFF") : .gray)
+                                .foregroundColor(isTodayTask ? Color.accentColor : .gray)
                                 .cornerRadius(8)
                         }
                     }
@@ -130,9 +132,9 @@ struct AddTodoView: View {
                                 .background(Color.white)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(!useAlarm ? Color(hex: "00FFFF") : .gray, lineWidth: 2)
+                                        .stroke(!useAlarm ? Color.accentColor : .gray, lineWidth: 2)
                                 )
-                                .foregroundColor(!useAlarm ? Color(hex: "00FFFF") : .gray)
+                                .foregroundColor(!useAlarm ? Color.accentColor : .gray)
                                 .cornerRadius(8)
                         }
 
@@ -145,9 +147,9 @@ struct AddTodoView: View {
                                 .background(Color.white)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(useAlarm ? Color(hex: "00FFFF") : .gray, lineWidth: 2)
+                                        .stroke(useAlarm ? Color.accentColor : .gray, lineWidth: 2)
                                 )
-                                .foregroundColor(useAlarm ? Color(hex: "00FFFF") : .gray)
+                                .foregroundColor(useAlarm ? Color.accentColor : .gray)
                                 .cornerRadius(8)
                         }
                     }
@@ -194,7 +196,7 @@ struct AddTodoView: View {
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(Color(hex: "0BCCFA"))
+                            .background(Color.accentColor)
                             .cornerRadius(10)
                     }
                     .padding(.top)
@@ -212,20 +214,6 @@ private extension AddTodoView {
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.locale = Locale(identifier: "ko_KR")
         return formatter.string(from: date)
-    }
-}
-extension Color {
-    init(hex: String) {
-        let scanner = Scanner(string: hex)
-        _ = scanner.scanString("#")
-        var rgb: UInt64 = 0
-        scanner.scanHexInt64(&rgb)
-
-        let r = Double((rgb >> 16) & 0xFF) / 255.0
-        let g = Double((rgb >> 8) & 0xFF) / 255.0
-        let b = Double(rgb & 0xFF) / 255.0
-
-        self.init(red: r, green: g, blue: b)
     }
 }
 
