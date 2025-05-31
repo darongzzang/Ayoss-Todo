@@ -15,7 +15,7 @@ extension HomeView {
 }
 extension TodoCardView {
     func dateString(_ date: Date) -> String {
-        let formatter = DateFormatter()
+        let formatter = DateFormatterConstant()
         formatter.dateFormat = "yyyy.MM.dd"
         return formatter.string(from: date)
     }

@@ -24,8 +24,8 @@ struct HomeView: View {
     }
     
     //날짜 포맷터
-    var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
+    var dateFormatter: DateFormatterConstant {
+        let formatter = DateFormatterConstant()
         formatter.dateFormat = "yyyy.MM.dd"
         return formatter
     }
