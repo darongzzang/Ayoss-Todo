@@ -5,13 +5,6 @@
 //  Created by 김이예은 on 5/17/25.
 //
 
-//
-//  ChartView.swift
-//  swift_test
-//
-//  Created by 이한 on 5/20/25.
-//
-
 import Foundation
 import SwiftUI
 import Charts
